@@ -16,6 +16,7 @@ use Aws\Credentials\AssumeRoleCredentialProvider;
 use Aws\Credentials\CredentialProvider;
 use Aws\DynamoDb\DynamoDbClient;
 use Aws\Sts\StsClient;
+use Laminas\ServiceManager\Factory\AbstractFactoryInterface;
 use Psr\Container\ContainerInterface;
 
 /**
@@ -23,7 +24,7 @@ use Psr\Container\ContainerInterface;
  *
  * @package Phayne\DynamoDB\Container
  */
-final class DynamoDbClientAbstractFactory
+final class DynamoDbClientAbstractFactory implements AbstractFactoryInterface
 {
     private ?array $clientConfig = null;
 
