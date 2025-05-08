@@ -76,9 +76,14 @@ class QueryOperation extends Search\AbstractSearchOperation
                         );
                         break;
                     default:
-                        $this->setExpression([
-                            $key => $condition,
-                        ]);
+                        if (is_numeric($key)) {
+                            $this->setExpression($condition);
+
+                        } else {
+                            $this->setExpression([
+                                $key => $condition,
+                            ]);
+                        }
                         break;
                 }
             }
